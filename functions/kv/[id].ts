@@ -13,4 +13,4 @@ export const onRequestPost: PagesFunction = ({ env, params, request }) =>
 		.required()
 		.validate(params.id)
 		// @ts-ignore
-		.then(async (id) => env.SVISCOURSE.set(id, await request.text()));
+		.then(async (id) => env.SVISCOURSE.put(id, await request.text()));
