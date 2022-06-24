@@ -2,7 +2,7 @@ import routes from '$lib/constants/routes';
 import { verifyIdToken } from '$lib/helpers/firebase-admin';
 import { serialize } from 'cookie';
 import type { RequestHandler } from './__types/sessionLogin';
-import yup from 'yup';
+import * as yup from 'yup';
 
 export const get: RequestHandler = async ({ url }) => {
 	const { idToken, redirectUrl } = await yup
