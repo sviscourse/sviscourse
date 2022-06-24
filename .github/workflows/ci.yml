@@ -15,8 +15,8 @@ jobs:
           cache: "npm"
           cache-dependency-path: package-lock.json
       - run: npm ci
-      - run: mkdir -p src/configs
-      - run: 'echo "$FIREBASE_JSON" > src/configs/firebase.json'
+      - run: mkdir -p src/lib/configs
+      - run: 'echo "$FIREBASE_JSON" > src/lib/configs/firebase.json'
         shell: bash
         env:
           FIREBASE_JSON: ${{ secrets.FIREBASE_JSON }}
