@@ -1,1 +1,10 @@
-/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+h1 {
+	a {
+		text-decoration: none;
+		color: $color0;
+	}
+}
+button,
+input {
+	padding: 10px;
+}
