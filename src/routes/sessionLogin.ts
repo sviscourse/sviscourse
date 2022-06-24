@@ -7,7 +7,7 @@ import type { RequestHandler } from './__types/sessionLogin';
 export const get: RequestHandler = async ({ url }) => {
 	const g = (k: string) => url.searchParams.get(k);
 	const idToken = await yup.string().required().validate(g('idToken'));
-	const redirectUrl = await yup.string().validate(g('redirectUrl'));
+	const redirectUrl = await yup.string().nullable().validate(g('redirectUrl'));
 	await verifyIdToken(idToken);
 	return {
 		status: 302,
