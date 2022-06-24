@@ -1,1 +1,29 @@
-/* Variables and mixins declared here will be available in all other SCSS files */
+$color0: #ff3e00;
+$color1: #3fb3ff;
+$color2: #7d828d;
+$color3: #676778;
+$color4: #40414d;
+$color5: #ffffff;
+
+@mixin col {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+@mixin row {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+@mixin pad-y-20 {
+	padding: 0 20px;
+}
+@mixin grow {
+	flex-grow: 1;
+}
+@mixin center {
+	justify-content: center;
+}
+@mixin cross-center {
+	align-items: center;
+}

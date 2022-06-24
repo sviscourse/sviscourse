@@ -1,5 +1,33 @@
 <script>
+	import { session } from '$app/stores';
+	import routes from '$lib/constants/routes';
+	import 'modern-normalize/modern-normalize.css';
 	import '../app.scss';
 </script>
 
-<slot />
+<main>
+	<header>
+		<h1><a href={routes.HOME}>Sviscourse</a></h1>
+		<input type="text" />
+		{#if $session.user}
+			<a href={routes.LOGOUT}>Logout</a>
+		{:else}
+			<a href={routes.LOGIN}>Login</a>
+		{/if}
+	</header>
+	<slot />
+</main>
+
+<style lang="scss">
+	main {
+		@include col;
+		header {
+			@include row;
+			@include cross-center;
+			@include pad-y-20;
+		}
+		input {
+			@include grow;
+		}
+	}
+</style>
