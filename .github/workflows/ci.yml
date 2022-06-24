@@ -15,6 +15,11 @@ jobs:
           cache: "npm"
           cache-dependency-path: package-lock.json
       - run: npm ci
+      - run: mkdir -p src/lib/configs
+      - run: 'echo "$FIREBASE_JSON" > src/lib/configs/firebase.json'
+        shell: bash
+        env:
+          FIREBASE_JSON: ${{ secrets.FIREBASE_JSON }}
       - run: npm run check
       - run: npx playwright install
       - run: npm run test
